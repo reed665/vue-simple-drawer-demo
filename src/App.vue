@@ -5,13 +5,17 @@
     </header>
 
     <main>
-      <button @click="openDrawer">Open Drawer</button>
+      <button @click="openDrawer">
+        Open Drawer
+      </button>
 
       <AppDrawer :active="drawerIsActive">
         <div class="drawer-content">
           <h2>I am drawer</h2>
 
-          <button @click="closeDrawer">Close</button>
+          <button @click="closeDrawer">
+            Close
+          </button>
         </div>
       </AppDrawer>
     </main>
@@ -50,6 +54,10 @@ export default {
 </script>
 
 <style>
+:root {
+  --drawer-width: 640px;
+}
+
 body {
   background: lightgray;
   margin: 0;

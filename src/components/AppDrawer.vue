@@ -1,10 +1,14 @@
 <template>
   <div
-    v-if="active"
     class="app-drawer"
     :class="{ 'active': active }"
   >
-    <slot />
+    <div
+      v-if="active"
+      class="drawer-inner"
+    >
+      <slot />
+    </div>
   </div>
 </template>
 
@@ -27,7 +31,12 @@ export default {
   top: 0;
   right: 0;
   bottom: 0;
-  width: 60%;
+  width: var(--drawer-width);
+  transform: translateX(var(--drawer-width));
+  transition: transform .3s ease-in-out;
 }
 
+.active {
+  transform: translateX(0);
+}
 </style>
